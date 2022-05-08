@@ -17,3 +17,4 @@ E:\VDU\4th semester\Analysis of Algorithms\LabWork3\sort-runtime-app\sort-runtim
 E:\VDU\4th semester\Analysis of Algorithms\LabWork3\sort-runtime-app\sort-runtime-app\bin\Debug\LiveCharts.Wpf.pdb
 E:\VDU\4th semester\Analysis of Algorithms\LabWork3\sort-runtime-app\sort-runtime-app\bin\Debug\LiveCharts.Wpf.xml
 E:\VDU\4th semester\Analysis of Algorithms\LabWork3\sort-runtime-app\sort-runtime-app\obj\Debug\sort-runtime-app.csproj.CopyComplete
+E:\VDU\4th semester\Analysis of Algorithms\LabWork3\sort-runtime-app\sort-runtime-app\obj\Debug\sort_runtime_app.Form1.resources
