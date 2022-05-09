@@ -29,7 +29,6 @@ namespace sort_runtime_app
         {
             InitializeComponent();
             SetCartesianChartAppearance();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -222,9 +221,19 @@ namespace sort_runtime_app
                     Val3.Add(stopwatch.ElapsedMilliseconds);
                     stopwatch.Reset();
                 }
-
-                cartesianChart1.Update();
             }
         }
+
+        private void checkedListBox1_Click(object sender, EventArgs e)
+        {
+            //for(int i = 0; i < checkedListBox1.Items.Count; i++)
+            //{
+            //    checkedListBox1.SetSelected(i, false);
+            //}
+            checkedListBox1.SetItemChecked(checkedListBox1.SelectedIndex, !checkedListBox1.GetItemChecked(checkedListBox1.SelectedIndex));
+            checkedListBox1.SetSelected(checkedListBox1.SelectedIndex, false);
+
+        }
+
     }
 }
