@@ -259,7 +259,10 @@ namespace sort_runtime_app
             }
             else
             {
-                comboBox3.Items.Add("2 000");
+                if (comboBox3.Items.Count == 2)
+                {
+                    comboBox3.Items.Add("2 000");
+                }
             }
         }
     }
