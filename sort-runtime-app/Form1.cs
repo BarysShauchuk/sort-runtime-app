@@ -185,9 +185,16 @@ namespace sort_runtime_app
                 });
             }
 
+            progressBar1.Visible = true;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = size;
+            panel1.Visible = false;
+            button2.Visible = false;
+            this.Update();
 
             for (int i = 0; i <= size; i += step)
             {
+                progressBar1.Value = i;
                 if (i0)
                 {
                     stopwatch.Start();
@@ -222,6 +229,9 @@ namespace sort_runtime_app
                     stopwatch.Reset();
                 }
             }
+            progressBar1.Visible = false;
+            cartesianChart1.Enabled = true;
+            button2.Visible = true;
         }
 
         private void checkedListBox1_Click(object sender, EventArgs e)
