@@ -24,6 +24,7 @@ namespace sort_runtime_app
         ChartValues<double> Val1 = new ChartValues<double> { };
         ChartValues<double> Val2 = new ChartValues<double> { };
         ChartValues<double> Val3 = new ChartValues<double> { };
+        int SortStep = 100;
 
         public Form1()
         {
@@ -46,7 +47,7 @@ namespace sort_runtime_app
                 Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86)),
 
 
-                LabelFormatter = val => Convert.ToString(Convert.ToInt32(val) * 1000),
+                LabelFormatter = val => Convert.ToString(Convert.ToInt32(val) * SortStep),
                 Separator = new Separator
                 {
                     StrokeThickness = 1,
@@ -122,6 +123,7 @@ namespace sort_runtime_app
             Program.CreateArray(ref array);
             Stopwatch stopwatch = new Stopwatch();
             cartesianChart1.Series.Clear();
+            SortStep = step;
 
             Val0.Clear();
             Val1.Clear();
@@ -245,5 +247,20 @@ namespace sort_runtime_app
 
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox2.SelectedIndex == 0)
+            {
+                if(comboBox3.SelectedIndex == 2)
+                {
+                    comboBox3.SelectedIndex = 1;
+                }
+                comboBox3.Items.Remove("2 000");
+            }
+            else
+            {
+                comboBox3.Items.Add("2 000");
+            }
+        }
     }
 }
