@@ -113,7 +113,7 @@ namespace sort_runtime_app
                 checkedListBox1.GetItemChecked(2),
                 checkedListBox1.GetItemChecked(3),
                 Convert.ToInt32(Regex.Replace(comboBox2.SelectedItem.ToString(), " ", "")),
-                Convert.ToInt32(Regex.Replace(comboBox3.SelectedItem.ToString(), " ", ""))
+                Convert.ToInt32(comboBox3.SelectedItem.ToString())
                 );
         }
 
@@ -202,7 +202,7 @@ namespace sort_runtime_app
                     stopwatch.Start();
                     Program.InsertionSort(array.Take(i).ToArray());
                     stopwatch.Stop();
-                    Val0.Add(stopwatch.ElapsedMilliseconds);
+                    Val0.Add(Convert.ToDouble(stopwatch.ElapsedTicks) / Convert.ToDouble(10000));
                     stopwatch.Reset();
                 }
                 if (i1)
@@ -210,7 +210,7 @@ namespace sort_runtime_app
                     stopwatch.Start();
                     Program.SelectionSort(array.Take(i).ToArray());
                     stopwatch.Stop();
-                    Val1.Add(stopwatch.ElapsedMilliseconds);
+                    Val1.Add(Convert.ToDouble(stopwatch.ElapsedTicks) / Convert.ToDouble(10000));
                     stopwatch.Reset();
                 }
                 if (i2)
@@ -218,7 +218,7 @@ namespace sort_runtime_app
                     stopwatch.Start();
                     Program.BubleSort(array.Take(i).ToArray());
                     stopwatch.Stop();
-                    Val2.Add(stopwatch.ElapsedMilliseconds);
+                    Val2.Add(Convert.ToDouble(stopwatch.ElapsedTicks)/Convert.ToDouble(10000));
                     stopwatch.Reset();
                 }
                 if (i3)
@@ -227,7 +227,7 @@ namespace sort_runtime_app
                     stopwatch.Start();
                     Array.Sort(arr);
                     stopwatch.Stop();
-                    Val3.Add(stopwatch.ElapsedMilliseconds);
+                    Val3.Add(Convert.ToDouble(stopwatch.ElapsedTicks)/ Convert.ToDouble(10000));
                     stopwatch.Reset();
                 }
             }
@@ -249,20 +249,88 @@ namespace sort_runtime_app
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox2.SelectedIndex == 0)
+            int st = Convert.ToInt32(comboBox3.SelectedItem);
+            comboBox3.Items.Clear();
+            switch (comboBox2.SelectedIndex)
             {
-                if(comboBox3.SelectedIndex == 2)
-                {
-                    comboBox3.SelectedIndex = 1;
-                }
-                comboBox3.Items.Remove("2 000");
-            }
-            else
-            {
-                if (comboBox3.Items.Count == 2)
-                {
-                    comboBox3.Items.Add("2 000");
-                }
+                case 0:
+                    {
+                        comboBox3.Items.Add(1);
+                        comboBox3.SelectedIndex = 0;
+                        break;
+                    }
+                case 1:
+                case 2:
+                case 3:
+                    {
+                        comboBox3.Items.AddRange(new object[] { 1, 2 });
+                        if (st == 1){
+                            comboBox3.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            comboBox3.SelectedIndex = 1;
+                        }
+                        break;
+                    }
+                case 4:
+                    {
+                        comboBox3.Items.AddRange(new object[] { 1, 2, 10 });
+                        if (st == 1)
+                        {
+                            comboBox3.SelectedIndex = 0;
+                        } else if (st == 2)
+                        {
+                            comboBox3.SelectedIndex = 1;
+                        }
+                        else
+                        {
+                            comboBox3.SelectedIndex = 2;
+                        }
+                        break;
+                    }
+                case 5:
+                    {
+                        comboBox3.Items.AddRange(new object[] { 10, 20, 50 });
+                        if (st <= 10)
+                        {
+                            comboBox3.SelectedIndex = 0;
+                        }
+                        else if (st == 20)
+                        {
+                            comboBox3.SelectedIndex = 1;
+                        }
+                        else
+                        {
+                            comboBox3.SelectedIndex = 2;
+                        }
+                        break;
+                    }
+                case 6:
+                    {
+                        comboBox3.Items.AddRange(new object[] { 20, 50, 100 });
+                        if (st <= 20)
+                        {
+                            comboBox3.SelectedIndex = 0;
+                        }
+                        else if (st == 50)
+                        {
+                            comboBox3.SelectedIndex = 1;
+                        }
+                        else
+                        {
+                            comboBox3.SelectedIndex = 2;
+                        }
+                        break;
+                    }
+                case 7:
+                    {
+                        comboBox3.Items.Add(100);
+                        comboBox3.SelectedIndex = 0;
+                        break;
+                    }
+
+
             }
         }
     }

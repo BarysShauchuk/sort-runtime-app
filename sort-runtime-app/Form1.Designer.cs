@@ -125,9 +125,12 @@
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.Items.AddRange(new object[] {
-            "100",
-            "1 000",
-            "2 000"});
+            "1",
+            "2",
+            "10",
+            "20",
+            "50",
+            "100"});
             this.comboBox3.Location = new System.Drawing.Point(85, 269);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(127, 37);
@@ -158,13 +161,14 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "25",
+            "50",
+            "100",
+            "500",
             "1 000",
-            "5 000",
-            "10 000",
-            "15 000",
-            "20 000",
-            "25 000",
-            "30 000"});
+            "5 000"});
             this.comboBox2.Location = new System.Drawing.Point(15, 219);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(197, 37);
