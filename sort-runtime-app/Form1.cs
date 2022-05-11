@@ -329,8 +329,6 @@ namespace sort_runtime_app
                         comboBox3.SelectedIndex = 0;
                         break;
                     }
-
-
             }
         }
     }

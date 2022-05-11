@@ -61,7 +61,7 @@ namespace sort_runtime_app
             }
         }
 
-        public static int[] SelectionSort(int[] arr)
+        public static void SelectionSort(int[] arr)
         {
             int min_idx;
             for(int i = 0; i < arr.Length - 1; i++)
@@ -75,7 +75,6 @@ namespace sort_runtime_app
                 arr[min_idx] = arr[i];
                 arr[i] = temp;
             }
-            return arr;
         }
     }
 }
